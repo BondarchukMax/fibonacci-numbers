@@ -1,7 +1,11 @@
-const isPrime = (num) => {
-  for(let i = 2; i < num; i++)
-    if  (num % i === 0) return false;
-  return num > 1;
+const isPrime = (number: number): boolean => {
+  for (let i = 2; i < number; i++) {
+    if ((number % i) === 0) {
+      return false;
+    }
+  }
+
+  return (number > 1);
 };
 
 const fibonacci = (num) => {
