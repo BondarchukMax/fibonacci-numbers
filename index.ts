@@ -1,4 +1,4 @@
-const ispnum = (num) => {
+const isPrime = (num) => {
   for(let i = 2; i < num; i++)
     if  (num % i === 0) return false;
   return num > 1;
@@ -9,14 +9,14 @@ const fibonacci = (num) => {
   return fibonacci(num - 1) + fibonacci(num - 2);
 };
 
-const nxtPrmFib = (number) => {
+const nextPrimeFibonacci = (number) => {
   let r = 0;
   let l = 1;
   while (true) {
     const fib = fibonacci(l);
     console.log('fib', fib, number);
     if (fib > number) {
-      if (ispnum(fib)) {
+      if (isPrime(fib)) {
         r = fib;
         break;
       } else {
@@ -31,4 +31,4 @@ const nxtPrmFib = (number) => {
   console.warn('Next prime fib ', r);
 }
 
-nxtPrmFib(20);
+nextPrimeFibonacci(20);
