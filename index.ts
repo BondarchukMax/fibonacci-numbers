@@ -1,5 +1,5 @@
-var ispnum = function(num) {
-  for(var i = 2; i < num; i++)
+const ispnum = (num) => {
+  for(let i = 2; i < num; i++)
     if  (num % i === 0) return false;
   return num > 1;
 };
@@ -9,11 +9,11 @@ const fibonacci = (num) => {
   return fibonacci(num - 1) + fibonacci(num - 2);
 };
 
-function nxtPrmFib(number) {
+const nxtPrmFib = (number) => {
   let r = 0;
   let l = 1;
   while (true) {
-    var fib = fibonacci(l);
+    const fib = fibonacci(l);
     console.log('fib', fib, number);
     if (fib > number) {
       if (ispnum(fib)) {
