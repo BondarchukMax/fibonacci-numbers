@@ -24,26 +24,22 @@ const fibonacci = (number: number): number => {
   return next;
 };
 
-const nextPrimeFibonacci = (number) => {
-  let r = 0;
+const nextPrimeFibonacci = (number: number): number => {
   let l = 1;
+
   while (true) {
-    const fib = fibonacci(l);
-    console.log('fib', fib, number);
+    const fib: number = fibonacci(l);
     if (fib > number) {
       if (isPrime(fib)) {
-        r = fib;
-        break;
+        return fib;
       } else {
-        l = l + 1;
-        console.warn('bumping to ', fib);
+        l++;
       }
     } else {
-      l = l + 1;
-      console.warn('bumping to', fib);
+      l++;
     }
   }
-  console.warn('Next prime fib ', r);
-}
+};
 
-nextPrimeFibonacci(20);
+const result = nextPrimeFibonacci(3);
+console.log(result);
