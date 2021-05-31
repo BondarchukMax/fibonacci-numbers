@@ -8,9 +8,20 @@ const isPrime = (number: number): boolean => {
   return (number > 1);
 };
 
-const fibonacci = (num) => {
-  if (num <= 1)return 1;
-  return fibonacci(num - 1) + fibonacci(num - 2);
+const fibonacci = (number: number): number => {
+  if (number <= 1) {
+    return number;
+  }
+
+  let current = 1;
+  let next = 1;
+  for (let i = 3; i <= number; i++) {
+    let calculateSum = current + next;
+    current = next;
+    next = calculateSum;
+  }
+
+  return next;
 };
 
 const nextPrimeFibonacci = (number) => {
